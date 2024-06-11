@@ -1,6 +1,8 @@
 # VS Code files
 index_copy.ts
 fetch-wrapper-copy.ts
+index_copy_avatar.tsx
+auth_copy.ts
 
 # Github files
 .env

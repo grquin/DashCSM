@@ -1,23 +1,23 @@
 import React from "react";
-
 import type { AvatarProps } from "antd";
 import { Avatar as AntdAvatar } from "antd";
-
 import { getNameInitials, getRandomColorFromString } from "@/utilities";
 
 type Props = AvatarProps & {
   name?: string;
+  imageName?: string;
 };
 
-const CustomAvatarComponent = ({ name = "", style, ...rest }: Props) => {
+const CustomAvatarComponent = ({ name = "", imageName, style, ...rest }: Props) => {
+  const imageUrl = imageName ? `/images/users/${imageName}` : undefined;
+
   return (
     <AntdAvatar
       alt={name}
       size="small"
+      src={imageUrl}
       style={{
-        backgroundColor: rest?.src
-          ? "transparent"
-          : getRandomColorFromString(name),
+        backgroundColor: imageUrl ? "transparent" : getRandomColorFromString(name),
         display: "flex",
         alignItems: "center",
         border: "none",
@@ -25,7 +25,7 @@ const CustomAvatarComponent = ({ name = "", style, ...rest }: Props) => {
       }}
       {...rest}
     >
-      {getNameInitials(name)}
+      {!imageUrl && getNameInitials(name)}
     </AntdAvatar>
   );
 };
