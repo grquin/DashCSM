@@ -1,4 +1,5 @@
 // src/providers/data/index.ts
+
 import graphqlDataProvider, {
   GraphQLClient,
   liveProvider as graphqlLiveProvider,
