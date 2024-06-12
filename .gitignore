@@ -5,8 +5,8 @@ index_copy_avatar.tsx
 auth_copy.ts
 index_copy2.ts
 convertTypesToGraphQL_copy.mjs
-/generated/postgres-schema.sql
-
+/generated
+/hasura-project
 
 # Github files
 .env
